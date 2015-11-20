@@ -1,0 +1,34 @@
+<<<<<<< HEAD
+﻿<h1>Edit</h1>
+=======
+﻿<h1>Edit your car here</h1>
+
+<form ng-submit="vm.editCar()">
+    <label>
+        Name: <input ng-model="vm.carToEdit.shortDescription" />
+    </label>
+    <label>
+        Full Description: <input ng-model="vm.carToEdit.fullDescription" />
+    </label>
+    <label>
+        Price: <input ng-model="vm.carToEdit.price" />
+    </label>
+    <label>
+        Image Url: <input ng-model="vm.carToEdit.imageUrl" />
+    </label>
+
+    <label>
+        <!--Make: <select ng-model="vm.selectedMake"
+                ng-options="make.name for make in vm.makes"
+                ng-change="vm.getCars()">
+            <option value="">All Models</option>
+        </select>-->
+        Make: <input ng-model="vm.carToEdit.carMakeId" />
+        Press: 1 for BMW
+        Press: 2 for Tesla
+        Press: 3 for MiniCooper
+
+    </label>
+    <input type="submit" value="Edit Car!" />
+</form>
+>>>>>>> d13f471b7b4417ed517cde658ec1fd9c2d140d41

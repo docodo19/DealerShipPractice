@@ -1,0 +1,66 @@
+<<<<<<< HEAD
+﻿<div class="modal-header">
+	<h3 class="modal-title">Add a New Car</h3>
+</div>
+
+<form name="messageForm">
+
+	<div class="modal-body">
+		<div class="form-group">
+			<label for="make">Make</label><br />
+			<select name="make" ng-model="vm.carToAdd.carMakeID"
+							ng-options="car.name for car in vm.makes"
+							ng-change="vm.setMake(vm.carToAdd.carMakeID)">
+				<option value="">-- Select Make --</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="model">Model</label>
+			<input type="text" name="model" class="form-control" ng-model="vm.carToAdd.shortDescription" placeholder="Model" />
+		</div>
+		<div class="form-group">
+			<label for="description">Description</label>
+			<textarea rows="3" name="description" class="form-control" ng-model="vm.carToAdd.fullDescription" placeholder="Description" />
+		</div>
+		<div class="form-group">
+			<label for="price">Price</label>
+			<input type="number" size="5" ng-minlength="4" ng-maxlength="5" name="price" class="form-control input-sm" ng-model="vm.carToAdd.price" placeholder="Price" />
+		</div>
+		<div class="form-group">
+			<label for="image">Image</label>
+			<input type="text" name="image" class="form-control" ng-model="vm.carToAdd.imageUrl" placeholder="URL to Image" />
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button class="btn btn-primary" type="submit" ng-click="vm.addCar()">Submit</button>
+		<button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+	</div>
+=======
+﻿<h1>Add new car here!</h1>
+
+
+<form novalidate name="carForm" ng-submit="vm.addCar()">
+    <label>
+        Name: <input ng-model="vm.carToAdd.shortDescription" required/>
+    </label>
+    <label>
+        Full Description: <input ng-model="vm.carToAdd.fullDescription" required/>
+    </label>
+    <label>
+        Price: <input ng-model="vm.carToAdd.price" required />
+    </label>
+    <label>
+        Image Url: <input ng-model="vm.carToAdd.imageUrl" required/>
+    </label>
+
+    <select ng-model="vm.selectedMake"
+            ng-options="make.name for make in vm.makes"
+            ng-change="vm.getCars()" required>
+        <option value="">Select Model Here</option>
+    </select>
+
+    <input type="submit" value="Add New Car!" ng-disabled="carForm.$invalid" />
+
+>>>>>>> d13f471b7b4417ed517cde658ec1fd9c2d140d41
+</form>

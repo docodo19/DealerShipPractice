@@ -1,0 +1,45 @@
+<<<<<<< HEAD
+﻿<h1>List of Cars</h1>
+
+<a href="#" ng-click="vm.addCar('0')">Add a New Car</a>
+
+<hr />
+
+<!-- Makes -->
+<div>
+	<select ng-model="vm.selectedMake"
+					ng-options="car as car.name for car in vm.makes"
+					ng-change="vm.getCars(vm.selectedMake)">
+		<option value="">-- All Makes --</option>
+	</select>
+</div>
+
+<!-- Models -->
+<div ng-repeat="car in vm.cars | filter: {carMakeId: vm.selectedMake.id}">
+	<h4>
+		{{car.shortDescription}}
+		<span class="editDeleteLink">
+			Edit | Delete
+		</span>
+	</h4>
+</div>
+=======
+﻿<h1>List Cars and maybe makes</h1>
+<div>
+    <select ng-model="vm.selectedMake"
+            ng-options="make.name for make in vm.makes"
+            ng-change="vm.getCars()">
+        <option value="">All Models</option>
+    </select>
+</div>
+
+<ul>
+    <li ng-repeat="item in vm.cars | filter: {carMakeId: vm.selectedMake.id}">
+        {{item.shortDescription}}
+        <a href="/edit/{{item.id}}">Edit</a>
+        <a ng-click="vm.removeCarModal(item.id)">Delete</a>
+    </li>
+</ul>
+
+
+>>>>>>> d13f471b7b4417ed517cde658ec1fd9c2d140d41
